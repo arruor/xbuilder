@@ -22,8 +22,8 @@ deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu xenial main universe 
 deb [arch=i386,amd64] http://archive.ubuntu.com/ubuntu xenial-updates main universe restricted
 deb-src [arch=i386,amd64] http://archive.ubuntu.com/ubuntu xenial-updates main universe restricted
 
-deb [arch=armhf,amd64] http://mobile.neon.pangea.pub xenial main
-deb-src [arch=armhf,amd64] http://mobile.neon.pangea.pub xenial main
+deb [arch=armhf,amd64] http://neon.plasma-mobile.org:8080 xenial main
+deb-src [arch=armhf,amd64] http://neon.plasma-mobile.org:8080 xenial main
 " > /etc/apt/sources.list
 
 echo 'Debug::pkgProblemResolver "true";' > /etc/apt/apt.conf.d/debug
@@ -32,7 +32,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A12B6139432062D1
 
 pushd /tmp
 rm key || true
-wget http://mobile.kci.pangea.pub/Pangea%20CI.gpg.key -O key
+wget http://neon.plasma-mobile.org:8080/Pangea%20CI.gpg.key -O key
 apt-key add key
 popd
 
